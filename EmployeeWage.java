@@ -4,16 +4,22 @@ public class EmployeeWage {
 
 	// CONSTANTS
 	public static final int IS_FULL_TIME = 1;
+	public static final int WAGE_PER_HOUR = 20;
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to EMPLOYEE WAGE COMPUTATION.\n");
 
-		// EMPLOYEE ATTENDENCE CHECK
-		double empCheck = Math.floor(Math.random() * 10) % 2;
-		System.out.println("empCheck: " + empCheck);
+		// VARIABLES
+		int empHoursPerDay = 0;
+		int empWage = 0;
+
+		// EMPLOYEE DAILY WAGE COMPUTATION
+		int empCheck = (int) Math.floor(Math.random() * 10) % 2;
 		if (empCheck == IS_FULL_TIME)
-			System.out.println("Employee is PRESENT.");
+			empHoursPerDay = 8;
 		else
-			System.out.println("Employee is ABSENT.");
+			empHoursPerDay = 0;
+		empWage = empHoursPerDay * WAGE_PER_HOUR;
+		System.out.println("Daily Wage for the Employee is:  " + empWage);
 	}
 }
