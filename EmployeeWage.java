@@ -16,12 +16,16 @@ public class EmployeeWage {
 
 		// EMPLOYEE DAILY WAGE COMPUTATION
 		int empCheck = (int) Math.floor(Math.random() * 10) % 3;
-		if (empCheck == IS_FULL_TIME)
+		switch (empCheck) {
+		case IS_FULL_TIME:
 			empHoursPerDay = 8;
-		else if (empCheck == IS_PART_TIME)
+			break;
+		case IS_PART_TIME:
 			empHoursPerDay = 4;
-		else
+			break;
+		default:
 			empHoursPerDay = 0;
+		}
 		empWage = empHoursPerDay * WAGE_PER_HOUR;
 		System.out.println("Daily Wage for the Employee is:  " + empWage);
 	}
